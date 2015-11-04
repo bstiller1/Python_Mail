@@ -14,38 +14,33 @@ back = "<br /><a href='javascript:history.go(-1);' title='Back'>Back</a>"
 
 # Check form fields
 try:
-	value = form["fname"].value
+	fname = form["fname"].value
 except KeyError:
 	print("You did not submit your First Name")
 	print(back)
 	sys.exit(0)
 
 try:
-	value = form["lname"].value
+	lname = form["lname"].value
 except KeyError:
 	print("You did not submit your Last Name")
 	print(back)
 	sys.exit(0)
 
 try:
-	value = form["sender"].value
+	sender = form["sender"].value
 except KeyError:
 	print("You did not submit your Email Address")
 	print(back)
 	sys.exit(0)
 
 try:
-	value = form["message"].value
+	message = form["message"].value
 except KeyError:
 	print("You did not submit your Message")
 	print(back)
 	sys.exit(0)	
 
-# Short-form variables
-fname = form["fname"].value
-lname = form["lname"].value
-sender = form["sender"].value
-message = form["message"].value
 # Build message for email message
 content = "From: " + fname + " " + lname + " " + sender + "\n" + message
 
@@ -53,7 +48,7 @@ content = "From: " + fname + " " + lname + " " + sender + "\n" + message
 try:
 	sendmail_location = "/usr/sbin/sendmail" # sendmail location
 	p = os.popen("%s -t" % sendmail_location, "w")
-	p.write("From: %s\n" % sender)
+	p.write("From: %s \n" % sender)
 	p.write("To: %s\n" % "stiller.blake@gmail.com")
 	p.write("Subject: Python Mail\n")
 	p.write("\n") # blank line separating headers from body
