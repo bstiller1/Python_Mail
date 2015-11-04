@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Send Email</title>
+</head>
+<body>
+<h3>Send an email:</h3>
+<form action="cgi-bin/sendmail.py" method="post">
+<table>
+	<tr>
+		<td><label for="fname">First Name:</label></td>
+		<td><input type="text" name="fname" /></td>
+	</tr>
+	<tr>
+		<td><label for="lname">Last Name:</label></td>
+		<td><input type="text" name="lname" /></td>
+	</tr>
+	<tr>
+		<td><label for="sender">Email Address:</label></td>
+		<td><input type="text" name="sender" /></td>
+	</tr>
+	<tr>
+		<td><label for="message">Message:</label></td>
+		<td><textarea name="message"></textarea></td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><input type="submit" name="submit" value="Send" /></td>
+	</tr>
+</form>
+
+</body>
+</html>
